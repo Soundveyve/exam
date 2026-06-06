@@ -1,7 +1,7 @@
 # Example of using MySQL in Docker
 
+brrrrrrrrrrrrrrrrrrrr-srv
 ## Before compose-up
-
 ```sh
 sudo setenforce 0
 sudo systemctl enable --now docker.service
@@ -10,7 +10,6 @@ sudo mount /dev/sr0 /mnt/sr0
 cd /mnt/sr0/docker/
 sudo docker load -i mariadb_latest.tar
 sudo docker load -i site_latest.tar
-sudo docker images
 ```
 
 On your Linux-system I recommend make folder for this compose file.
@@ -116,10 +115,10 @@ ONLY IF YOU NEED STOP:
 cd /opt/simple_web
 sudo docker compose down
 ```
----------------------------------------------------------------------------
-=========================================================================
-# Example work with MySQL on High Availability Server Linux
+===========================================================================
 
+# Example work with MySQL on High Availability Server Linux
+hqqqqqqqqqqqqqqqqq-srv
 For enable service for MySQL and Apache (yes, someone else is using this old thing)
 
 ```sh
@@ -170,10 +169,10 @@ Finally:
 sudo systemctl restart httpd.service
 ```
 
-----------------------------------------------------------------------------------------------------------------------------=========================================================================
+===========================================================================
 
 # To learn how to work with nginx
-
+ispispispispispispisp
 ## Config Nginx for MySQL with Nextcloud
 
 ```sh
@@ -215,6 +214,7 @@ server {
 ```
 ## Config for web Apache with MySQL + bonus for web-based auth)
 
+On user `WEBc` you need write password `P@ssw0rd`
 ```sh
 sudo htpasswd -c /etc/nginx/.htpasswd WEBc
 sudo nano /etc/nginx/conf.d/web.conf
@@ -233,20 +233,22 @@ server {
 }
 ```
 
-
 # AFTER NGINX CONFIG WRITE
 
 ```sh
-sudo systemctl restart nginx.service
 sudo setenforce 0
+sudo systemctl restart nginx.service
 ```
 
-------------------------------------------------------------------------------------------
-=========================================================================
+===========================================================================
 
 # I don't use DNS...Yes, I am bad)
 
 For use in your browser domain-name, you need change `/etc/hosts` on client-system with browser:
+
+```sh
+sudo nano /etc/hosts
+```
 
 ```sh
 172.16.1.1   docker   docker.sirius-exam.org
